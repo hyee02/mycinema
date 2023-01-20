@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .mytitle {
+            background-color: green;
+            color: white;
+
+            height: 250px;
+
+            /* 박스 안 내용을 할때 패딩값 안줘도되는 알아서 정렬되는 코드 4가지 세트 */
+            display: flex;
+            /* 내용을 세로로 정렬하겠다는 뜻. 만약 가로로 정렬을 원하면 column 대신 row */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            /* url 앞에 콤마(,)를 하고 아래 코드 입력하면 배경 어두워짐 */
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* 이름표 안달고 마이타이틀 아래에 있는 버튼이요~ 라고 바로 지정할 수 있는 코드 */
+        .mytitle>button {
+            width: 250px;
+            height: 50px;
+            background-color: transparent;
+            border: 1px solid white;
+            /* solid는 실선 */
+            color: white;
+            border-radius: 50px;
+
+            margin-top: 20px;
+        }
+
+        /* 버튼에 마우스 올렸을때 살짝 두꺼워지게 하는방법 hover */
+        .mytitle>button:hover {
+            border: 2px solid white;
+        }
+
+        .mycomment {
+            color: gray;
+        }
+
+        .mycards {
+            width: 1200px;
+            margin: 60px auto 60px auto;
+        }
+        
+        .mypost{
+            width: 500px;
+            margin: 50px auto 50px auto;
+            padding: 20px 20px 20px 20px;
+
+            /* 3px이 그림자의 길이(대부분 이것만 고치면됨) - 박스 그림자 만들기 */
+            box-shadow: 0px 0px 3px 0px grey;
+        }
+        
+        .mybtn{
+            display: flex;
+            /* 내용을 세로로 정렬하겠다는 뜻. 만약 가로로 정렬을 원하면 column 대신 row */
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+
+        }
+
+        .mybtn > button{
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mytitle">
+        <h1>내 생애 최고의 영화들</h1>
+        <button>영화 기록하기</button>
+    </div>
+    <div class="mypost">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">영화url</label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Comments</label>
+        </div>
+        <div class="mybtn">
+            <button type="button" class="btn btn-dark">기록하기</button>
+            <button type="button" class="btn btn-outline-dark">닫기</button>
+        </div>
+    </div>
+    <div class="mycards">
+        <!-- 카드 갯수 바꾸는방법은 md뒤에 숫자만 바꿔주면댐 -->
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
+                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="mycomment">여기에 나의 의견을 쓰면 됩니다.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
+                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="mycomment">여기에 나의 의견을 쓰면 됩니다.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
+                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="mycomment">여기에 나의 의견을 쓰면 됩니다.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
+                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="mycomment">여기에 나의 의견을 쓰면 됩니다.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
